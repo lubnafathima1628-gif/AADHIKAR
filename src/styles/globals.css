@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-forest-950: #060a08;
+  --bg-forest-900: #0b120f;
+  --bg-forest-850: #0f1a15;
+  --color-sage-400: #8fa89b;
+  --color-moss-500: #446150;
+  --color-earth-500: #c5a059;
+  --color-sand-100: #f4f6f0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #060a08;
+  color: #f4f6f0;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: transparent;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Natural Glassmorphism */
+.glass-panel {
+  background: rgba(11, 18, 15, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(143, 168, 155, 0.14);
+}
+
+.glass-panel-subtle {
+  background: rgba(15, 26, 21, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(143, 168, 155, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(21, 36, 30, 0.7) 0%, rgba(11, 18, 15, 0.85) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(143, 168, 155, 0.15);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(197, 160, 89, 0.4);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(197, 160, 89, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Nature & Gold Text Accents */
+.text-earth-gradient {
+  background: linear-gradient(135deg, #f4f6f0 20%, #c5a059 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-sage-gradient {
+  background: linear-gradient(135deg, #f4f6f0 10%, #8fa89b 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a08;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(143, 168, 155, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 89, 0.45);
+}
+
+/* Animated Pulse Dot */
+.node-pulse {
+  position: relative;
+}
+
+.node-pulse::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 12px rgba(197, 160, 89, 0.6);
+  animation: pulse 2.5s infinite;
+}
